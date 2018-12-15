@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Just Do It!",
+  "version": "1.0",
+  "description": "Stop wasting your time!",
+  "icons": {
+    "16": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "css": ["justdoit.css"],
+      "js": ["jquery.min.js", "justdoit.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "http://*/*", "https://*/*",
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
+  "web_accessible_resources": ["videos/*"]
+}

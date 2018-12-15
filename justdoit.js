@@ -1,11 +1,5 @@
 'use strict';
 
-var BANNER_APPEAR_DELAY = 1000 * 0.5;
-var BANNER_REMOVE_AFTER_SEC = 1000 * 8;
-var BANNER_APPEAR_PROBABILITY = 0.05;
-var BANNER_LOCAL_STORAGE_KEY = 'hasClickedOnBanner';
-var LIKEONFB_LOCAL_STORAGE_KEY = 'hasClickedOnBannerLikeOnFB';
-
 function removeVideo() {
   var $videoEl = $('.shia-do-it');
   if ($videoEl !== null) {
@@ -39,7 +33,7 @@ function addVideo() {
 
 
   video.onerror = function () {
-    alert('ooops... Shia had a problem. try on another tab');
+    alert('Ooops... Shia had a problem. Try on another tab.');
     removeVideo(false);
   };
 
@@ -54,7 +48,6 @@ var url = window.location.toString();
 var urlBlocked = false;
 
 for (var i = 0; i < BLOCKED_WEBSITES_LENGTH; i++) {
-  console.log(url, BLOCKED_WEBSITES[i]);
   if (url.includes(BLOCKED_WEBSITES[i])) {
     urlBlocked = true;
     break
